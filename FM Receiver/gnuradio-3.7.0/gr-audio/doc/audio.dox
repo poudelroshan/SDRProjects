@@ -1,0 +1,64 @@
+/*! \page page_audio Audio Interface
+
+\section Introduction
+
+The gnuradio audio component provides gr::audio::source and
+gr::audio::sink blocks. The audio blocks stream floating point samples
+to and from audio hardware.
+
+The gr-audio component will be built automatically when
+gnuradio-runtime is enabled. Support for underlying audio
+architectures depends on OS and installed libraries. At the time of
+writing, gr-audio supports OSS, ALSA, Jack, Portaudio, Audiounit, and
+Winmm.
+
+At runtime, gr-audio will automatically select from the available
+architectures. The user can override the selection via configuration
+file by setting "audio_module" to one of the following strings:
+
+\li oss
+\li alsa
+\li jack
+\li portaudio
+\li osx
+\li windows
+
+See gr-audio.conf for an example.
+
+Import this package with:
+
+\code
+    from gnuradio import audio
+\endcode
+
+See the Doxygen documentation for details about the blocks available
+in this package. A quick listing of the details can be found in Python
+after importing by using:
+
+\code
+    help(audio)
+\endcode
+
+
+\section Usage
+For an audio source, a typical OptionParser option and it's use looks
+like:
+
+\code
+    parser.add_option("-O", "--audio-output", type="string", default="",
+                       help="pcm device name.  E.g., hw:0,0 or surround51 or /dev/dsp")
+    audio_rate = 32e3
+    audio_sink = audio.sink (int (audio_rate), options.audio_output)
+\endcode
+
+Similarly, an audio sink would have a typical OptionParser option and
+its use would look like:
+
+\code
+    parser.add_option("-I", "--audio-input", type="string", default="",
+                      help="pcm input device name.  E.g., hw:0,0 or /dev/dsp")
+    audio_rate = 32e3
+    audio_source = audio.source(int(audio_rate), audio_input)
+\endcode
+
+*/
