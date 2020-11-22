@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Sat Nov 21 21:32:20 2020
+# Generated: Sun Nov 22 00:23:53 2020
 ##################################################
 
 if __name__ == '__main__':
@@ -34,7 +34,7 @@ import wx
 
 class top_block(grc_wxgui.top_block_gui):
 
-    def __init__(self, audio_device='default', decimation=1, fm_station=100.1e6, uri='ip:pluto.local'):
+    def __init__(self, audio_device='default', decimation=1, fm_station=94.7e6, uri='ip:pluto.local'):
         grc_wxgui.top_block_gui.__init__(self, title="Top Block")
         _icon_path = "C:\Program Files\GNURadio-3.7\share\icons\hicolor\scalable/apps\gnuradio-grc.png"
         self.SetIcon(wx.Icon(_icon_path, wx.BITMAP_TYPE_ANY))
@@ -135,7 +135,7 @@ def argument_parser():
         "", "--decimation", dest="decimation", type="intx", default=1,
         help="Set Decimation [default=%default]")
     parser.add_option(
-        "", "--fm-station", dest="fm_station", type="eng_float", default=eng_notation.num_to_str(100.1e6),
+        "", "--fm-station", dest="fm_station", type="eng_float", default=eng_notation.num_to_str(94.7e6),
         help="Set FM station [default=%default]")
     parser.add_option(
         "", "--uri", dest="uri", type="string", default='ip:pluto.local',
